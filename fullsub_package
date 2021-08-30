@@ -1,0 +1,10 @@
+library ieee;
+use ieee.std_logic_1164.all ;
+
+package fullsub_package is
+	component fullsub
+		port ( Bin , x, y : in std_logic ; 
+					s, Bout : out std_logic ) ;
+	end component ;
+	-- other declarations can be added too
+end package ;
