@@ -23,7 +23,7 @@ case dat is
 	when "100" => Cout <= '0'; S <= '1';
 	when "101" => Cout <= '1'; S <= '0';
 	when "110" => Cout <= '1'; S <= '0';
-	when "111" => Cout <= '0'; S <= '1';
+	when "111" => Cout <= '1'; S <= '1';
 end case;
 end process;
 
