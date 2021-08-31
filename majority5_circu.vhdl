@@ -8,13 +8,20 @@ end majority5_circu;
 
 architecture majority5_arch1 of majority5_circu is
 
+signal a1,a2,a3,a4,a5,a6,a7,a8 : std_logic;
 begin
-	a_out <= (a_in(0) or a_in(1) or a_in(2)) and (a_in(0) or a_in(1) or a_in(3)) and 
-				(a_in(0) or a_in(1) or a_in(4)) and (a_in(0) or a_in(2) or a_in(3)) and
-				(a_in(0) or a_in(2) or a_in(4)) and (a_in(0) or a_in(3) or a_in(4)) and
-				(a_in(1) or a_in(2) or a_in(3)) and (a_in(1) or a_in(2) or a_in(4)) and
-				(a_in(1) or a_in(3) or a_in(4)) and (a_in(2) or a_in(3) or a_in(4));
 
+	a1 <= (a_in(0) or a_in(1) or a_in(2)) and (a_in(0) or a_in(1) or a_in(3));
+	a2 <= (a_in(0) or a_in(1) or a_in(4)) and (a_in(0) or a_in(2) or a_in(3));
+	a3 <= (a_in(0) or a_in(2) or a_in(4)) and (a_in(0) or a_in(3) or a_in(4));
+	a4 <= (a_in(1) or a_in(2) or a_in(3)) and (a_in(1) or a_in(2) or a_in(4));
+	a5 <= (a_in(1) or a_in(3) or a_in(4)) and (a_in(2) or a_in(3) or a_in(4));
+	
+	a6 <= a1 and a2;
+	a7 <= a3 and a4;
+	a8 <= a6 and a7;
+	a_out <= a5 and a8;
+	
 end majority5_arch1;
 
 
