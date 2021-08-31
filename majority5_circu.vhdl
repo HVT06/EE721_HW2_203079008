@@ -44,7 +44,7 @@ architecture tb of majority5_circu_tb is
 	stim_proc: process
 	begin
 		for i in 1 to 32 loop
-			a_in_tb <= std_logic_vector(unsigned(a_in_tb)+1); wait for 50 ns;
+			a_in_tb <= std_logic_vector(unsigned(a_in_tb)+1); wait for 50 ps;
 		end loop;
 		wait;
 	end process;
